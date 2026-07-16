@@ -1,0 +1,20 @@
+<svg width="110" height="110" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFA116"/>
+      <stop offset="100%" stop-color="#B3B3B3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- dark backing circle -->
+  <circle cx="55" cy="55" r="52" fill="#1a1a1a"/>
+
+  <!-- white border ring -->
+  <circle cx="55" cy="55" r="52" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+
+  <!-- LeetCode-style bracket mark -->
+  <g fill="none" stroke="url(#lcGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M46 34 L30 55 L46 76"/>
+    <path d="M64 34 L80 55 L64 76"/>
+  </g>
+</svg>
