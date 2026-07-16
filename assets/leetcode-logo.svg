@@ -12,9 +12,25 @@
   <!-- white border ring -->
   <circle cx="55" cy="55" r="52" fill="none" stroke="#FFFFFF" stroke-width="4"/>
 
-  <!-- LeetCode-style bracket mark -->
+  <!-- pulsing glow behind the mark -->
+  <circle cx="55" cy="55" r="28" fill="#FFA116" opacity="0.15">
+    <animate attributeName="r" values="24;32;24" dur="2.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.10;0.25;0.10" dur="2.4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- LeetCode-style bracket mark, drawing itself in then looping a subtle glow -->
   <g fill="none" stroke="url(#lcGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M46 34 L30 55 L46 76"/>
-    <path d="M64 34 L80 55 L64 76"/>
+    <path d="M46 34 L30 55 L46 76" stroke-dasharray="60" stroke-dashoffset="60">
+      <animate attributeName="stroke-dashoffset" values="60;0;0;0" keyTimes="0;0.3;0.9;1" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M64 34 L80 55 L64 76" stroke-dasharray="60" stroke-dashoffset="60">
+      <animate attributeName="stroke-dashoffset" values="60;60;0;0" keyTimes="0;0.15;0.45;1" dur="3s" repeatCount="indefinite"/>
+    </path>
   </g>
+
+  <!-- small orbiting dot along the inner edge of the border -->
+  <circle r="3" fill="#FFA116">
+    <animateMotion dur="5s" repeatCount="indefinite"
+                    path="M 55,9 A 46,46 0 1,1 54.99,9 Z"/>
+  </circle>
 </svg>
